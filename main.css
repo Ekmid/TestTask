@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0 0;
+}
+
+.category {
+    position: relative;
+    display: flex;
+}
+
+
+.category__content {
+    display: flex;
+    flex-direction: column;
+    margin: 152px 160px;
+    width: 100%;
+
+}
+
+.title {
+    position: relative;
+    font-family: Impact;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48.79px;
+    text-align: left;
+    margin-bottom: 80px;
+    align-self: flex-start;
+
+    .title__spoiler {
+        position: absolute;
+        bottom: -8px;
+        width: 50%;
+        border-bottom: 4px solid #FFCC01;
+        border-radius: 4px;
+    }
+}
+
+.menu {
+    z-index: 1;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+}
+
+.menu__item {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    border: 2px solid #79C800;
+    border-radius: 16px;
+    box-shadow: 0px 4px 16px 0px #00000040;
+    width: auto;
+    max-width: 25%;
+    min-width: 250px;
+    height: 188px;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+
+    &:hover {
+        background: #79C80066;
+
+        #pesticides {
+            content: url('public/пестициды-1.svg');
+        }
+
+        #crops {
+            content: url('public/культуры-1.svg');
+        }
+
+        #pests {
+            content: url('public/вредители-1.svg');
+        }
+
+        #substances {
+            content: url('public/вещества-1.svg');
+        }
+    }
+}
+
+.menu__item-text {
+    margin-bottom: 16px;
+    margin-left: 16px;
+    font-family: Raleway;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32.87px;
+    letter-spacing: -1px;
+    text-align: left;
+}
+
+.menu__item-img {
+    overflow: hidden;
+    align-self: flex-end;
+}
+
+.green-leaf {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 15%;
+    transition: left 0.3s ease;
+}
+
+.bottom-bugs {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+}
+
+.top-bugs {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 60%;
+}
+
+.brown-leaf {
+    position: absolute;
+    z-index: -1;
+    top: 74%;
+    left: 65%;
+    transition: left 0.3s ease;
+}
+
+.sun {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+}
+
+.move-left-item-1 {
+    left: 64.5%;
+}
+
+.move-left-item-2 {
+    left: 64%;
+}
+
+.move-left-item-3 {
+    left: 63.5%;
+}
+
+.move-left-item-4 {
+    left: 63%;
+}
+
+.move-right-item-1 {
+    left: 0.5%;
+}
+
+.move-right-item-2 {
+    left: 1%;
+}
+
+.move-right-item-3 {
+    left: 1.5%;
+}
+
+.move-right-item-4 {
+    left: 2%;
+}
+
+@media (min-width:320px) and (max-width: 1440px) {
+    .category__content {
+        margin: 160px 30px;
+    }
+
+    .green-leaf {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 2%;
+        transition: left 0.3s ease;
+    }
+
+    .sun {
+        top: 30%;
+    }
+}
+
+.circle {
+    z-index: -1;
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 2s ease-in-out;
+}
+
+.circle-1 {
+    width: 113px;
+    height: 113px;
+    background: #FFFFFF4D;
+}
+
+.circle-2 {
+    width: 45px;
+    height: 45px;
+    background: #FFFFFF4D;
+
+}
+
+.circle-3 {
+    width: 72px;
+    height: 72px;
+    background: #FFFFFF4D;
+}

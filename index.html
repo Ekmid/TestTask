@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Test Chapter 1</title>
+</head>
+
+<body>
+    <main>
+        <section class="category">
+
+            <img class="green-leaf"  id="green-leaf" src="public/зеленый-листик.svg">
+            <img class="bottom-bugs" src="public/нижние-букашки.svg">
+            <img class="top-bugs" src="public/верхние-букашки.svg">
+            <img class="brown-leaf" id="brown-leaf" src="public/коричневый-листик.svg">
+            <img class="sun" src="public/солнце.svg">
+
+            <article class="category__content">
+
+                <h1 class="title">Категории<div class="title__spoiler"></div>
+                </h1>
+
+                <menu class="menu">
+    
+                    <li class="menu__item" id="item-1">
+                        <span class="menu__item-text">Пестициды</span>
+                        <img class="menu__item-img" id="pesticides" src="public/пестициды.svg">
+                    </li>
+    
+                    <li class="menu__item" id="item-2">
+                        <span class="menu__item-text">Культуры</span>
+                        <img class="menu__item-img" id="crops" src="public/культуры.svg">
+                    </li>
+    
+                    <li class="menu__item" id="item-3">
+                        <span class="menu__item-text">Вредители</span>
+                        <img class="menu__item-img" id="pests" src="public/вредители.svg">
+                    </li>
+    
+                    <li class="menu__item" id="item-4">
+                        <span class="menu__item-text">Действующие вещества</span>
+                        <img class="menu__item-img" id="substances" src="public/вещества.svg">
+                    </li>
+    
+                </menu>
+            </article>
+        </section>
+    </main>
+</body>
+
+<script>
+    const brownLeaf = document.getElementById('brown-leaf');
+    const greenLeaf = document.getElementById('green-leaf');
+
+document.getElementById('item-1').addEventListener('mouseenter', () => {
+    brownLeaf.classList.add('move-left-item-1');
+    greenLeaf.classList.add('move-right-item-1');
+});
+document.getElementById('item-1').addEventListener('mouseleave', () => {
+    brownLeaf.classList.remove('move-left-item-1');
+    greenLeaf.classList.remove('move-right-item-1');
+});
+
+document.getElementById('item-2').addEventListener('mouseenter', () => {
+    brownLeaf.classList.add('move-left-item-2');
+    greenLeaf.classList.add('move-right-item-2');
+});
+document.getElementById('item-2').addEventListener('mouseleave', () => {
+    brownLeaf.classList.remove('move-left-item-2');
+    greenLeaf.classList.remove('move-right-item-2');
+});
+
+document.getElementById('item-3').addEventListener('mouseenter', () => {
+    brownLeaf.classList.add('move-left-item-3');
+    greenLeaf.classList.add('move-right-item-3');
+});
+document.getElementById('item-3').addEventListener('mouseleave', () => {
+    brownLeaf.classList.remove('move-left-item-3');
+    greenLeaf.classList.remove('move-right-item-3');
+});
+
+document.getElementById('item-4').addEventListener('mouseenter', () => {
+    brownLeaf.classList.add('move-left-item-4');
+    greenLeaf.classList.add('move-right-item-4');
+});
+document.getElementById('item-4').addEventListener('mouseleave', () => {
+    brownLeaf.classList.remove('move-left-item-4');
+    greenLeaf.classList.remove('move-right-item-4');
+});
+
+document.querySelectorAll('li').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        createCircles(item);
+    });
+
+    item.addEventListener('mouseleave', () => {
+        removeCircles(item);
+    });
+});
+
+function createCircles(item) {
+    for (let i = 1; i <= 3; i++) {
+        const circle = document.createElement('div');
+        circle.classList.add('circle', `circle-${i}`);
+        item.appendChild(circle);
+
+        animateCircle(circle);
+    }
+}
+
+function removeCircles(item) {
+    const circles = item.querySelectorAll('.circle');
+    circles.forEach(circle => {
+        circle.remove();
+    });
+}
+
+function animateCircle(circle) {
+    const randomX = Math.random() * 400 - 50;
+    const randomY = Math.random() * 50 - 50;
+    circle.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+    setTimeout(() => {
+        animateCircle(circle);
+    }, 2000);
+}
+
+</script>
+
+</html>
